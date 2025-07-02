@@ -35,23 +35,22 @@ A smart home automation project designed to remotely control and monitor electri
 
 ## 📷 System Architecture
 
-+--------------------+            +-------------------------+          
-|    Web Interface   |  <=====>   |  Web Server (PHP/Python)|           
-+--------------------+            +-------------------------+           
-                                          ||                                
-                                          || HTTP / API calls               
-                                          \/                                
-                               +------------------------+                  
-                               |    Raspberry Pi        |                  
-                               |  (Main Controller)     |                  
-                               +-----------+------------+                  
-                                           | Zigbee                         
-                                           |                                 
-                    +----------------------+----------------------+
-                    |                      |                      |
-         +----------------+     +------------------+    +------------------+
-         |  Smart Lights  |     | Smart Thermostat |    |  Power Outlets   |
-         +----------------+     +------------------+    +------------------+
++--------------------+             +----------------------------+
+|  Web Interface     |  <------->  |  Web Server (PHP + Python) |
++--------------------+             +----------------------------+
+                                             |
+                                             | API / Localhost
+                                             v
+                                +-----------------------------+
+                                |      Raspberry Pi (Controller) |
+                                +-----------------------------+
+                                             |
+                                        Zigbee Communication
+                                             |
+       +-------------------+     +-------------------+     +-------------------+
+       |  Smart Lights     |     | Smart Thermostat  |     |  Power Outlets    |
+       +-------------------+     +-------------------+     +-------------------+
+
 
 ## 📌 Future Improvements
 
