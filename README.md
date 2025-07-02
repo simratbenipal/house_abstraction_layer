@@ -35,7 +35,23 @@ A smart home automation project designed to remotely control and monitor electri
 
 ## 📷 System Architecture
 
-[User Interface] <---> [Web Server (PHP + Python)] <---> [Raspberry Pi] <---> [Zigbee Coordinator] <---> [Smart Light] [Thermostat] [Power Outlet]
++--------------------+            +-------------------------+          
+|    Web Interface   |  <=====>   |  Web Server (PHP/Python)|           
++--------------------+            +-------------------------+           
+                                          ||                                
+                                          || HTTP / API calls               
+                                          \/                                
+                               +------------------------+                  
+                               |    Raspberry Pi        |                  
+                               |  (Main Controller)     |                  
+                               +-----------+------------+                  
+                                           | Zigbee                         
+                                           |                                 
+                    +----------------------+----------------------+
+                    |                      |                      |
+         +----------------+     +------------------+    +------------------+
+         |  Smart Lights  |     | Smart Thermostat |    |  Power Outlets   |
+         +----------------+     +------------------+    +------------------+
 
 ## 📌 Future Improvements
 
